@@ -6,8 +6,9 @@ module.exports = function check(str, bracketsConfig) {
         if(str[i] === pair[1]) {
           if(stack.indexOf(str[i]) === -1) {
             stack.push(str[i]);
-          } else {
-            stack.splice(stack.indexOf(str[i]), 1);
+          } 
+          else if(stack[stack.length - 1] === str[i]) {
+            stack.pop();
           }
         } else {
           stack.push(str[i]);
